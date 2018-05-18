@@ -26,14 +26,14 @@ before_install:
 
 install:
   - if [ -n "$DOCKER_FILE" ]; then
-      docker exec aikido-docker /bin/sh -c "cd $TRAVIS_BUILD_DIR && ./.ci/install.sh";
+      docker exec my-docker /bin/sh -c "cd $TRAVIS_BUILD_DIR && ./.ci/install.sh";
     else
       '.ci/install.sh';
     fi
 
 script:
   - if [ -n "$DOCKER_FILE" ]; then
-      docker exec aikido-docker /bin/sh -c "cd $TRAVIS_BUILD_DIR && ./.ci/script.sh";
+      docker exec my-docker /bin/sh -c "cd $TRAVIS_BUILD_DIR && ./.ci/script.sh";
     else
       '.ci/script.sh';
     fi
