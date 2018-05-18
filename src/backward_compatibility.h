@@ -17,7 +17,7 @@
 #include <boost/python/numpy.hpp>
 namespace np = boost::python::numpy;
 
-#elif
+#else
 
 #include <boost/numpy.hpp>
 namespace np = boost::numpy;
