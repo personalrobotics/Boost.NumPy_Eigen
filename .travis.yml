@@ -6,13 +6,30 @@ dist: trusty
 
 matrix:
   include:
-    - python: "3.4"
-    - python: "3.5"
-      env:
+    - env:
+        - BUILD_NAME=UBUNTU_TRUSTY_2_7
+        - BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION="2.7"
+    - env:
+        - BUILD_NAME=UBUNTU_TRUSTY_3_4
+        - BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION="3.4"
+    - env:
+        - BUILD_NAME=UBUNTU_XENIAL_2_7
+        - BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION="2.7"
         - DOCKER_FILE="ubuntu-xenial"
       services: docker
-    - python: "3.6"
-      env:
+    - env:
+        - BUILD_NAME=UBUNTU_XENIAL_3_5
+        - BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION="3.5"
+        - DOCKER_FILE="ubuntu-xenial"
+      services: docker
+    - env:
+        - BUILD_NAME=UBUNTU_BIONIC_2_7
+        - BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION="2.7"
+        - DOCKER_FILE="ubuntu-bionic"
+      services: docker
+    - env:
+        - BUILD_NAME=UBUNTU_BIONIC_3_6
+        - BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION="3.6"
         - DOCKER_FILE="ubuntu-bionic"
       services: docker
 
