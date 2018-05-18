@@ -6,6 +6,7 @@ dist: trusty
 
 matrix:
   include:
+    - python: "3.4"
     - python: "3.5"
       env:
         - DOCKER_FILE="ubuntu-xenial"
