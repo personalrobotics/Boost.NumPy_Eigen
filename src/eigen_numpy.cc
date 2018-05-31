@@ -253,13 +253,7 @@ struct EigenTransformFromPython {
 
 static const int X = Eigen::Dynamic;
 
-// wrapper function to support python2 and python3
-static void* init_numpy() {
-    import_array();
-    return NULL;
-}
-
-#if PY_MAJOR_VERSION >= 3
+#if PY_VERSION_HEX >= 0x03000000
 int
 #else
 void
@@ -269,7 +263,7 @@ SetupEigenConverters() {
   if (is_setup) return NUMPY_IMPORT_ARRAY_RETVAL;
   is_setup = true;
 
-  init_numpy();
+  import_array();
 
   EIGEN_MATRIX_CONVERTER(Matrix2f);
   EIGEN_MATRIX_CONVERTER(Matrix2d);
