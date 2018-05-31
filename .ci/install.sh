@@ -7,4 +7,5 @@ sudo apt-get install -y \
   libboost-python-dev \
   libeigen3-dev \
   libpython3-dev \
+  python-numpy \
   python3-numpy
