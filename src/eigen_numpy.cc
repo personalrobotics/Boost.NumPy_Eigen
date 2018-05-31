@@ -254,7 +254,7 @@ struct EigenTransformFromPython {
 static const int X = Eigen::Dynamic;
 
 #if PY_VERSION_HEX >= 0x03000000
-int
+void*
 #else
 void
 #endif
