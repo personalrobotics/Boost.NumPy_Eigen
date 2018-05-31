@@ -2,7 +2,6 @@
 #include <Eigen/Eigen>
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 #include <numpy/arrayobject.h>
-#include "backward_compatibility.h"
 
 // These macros were renamed in NumPy 1.7.1.
 #if !defined(NPY_ARRAY_C_CONTIGUOUS) && defined(NPY_C_CONTIGUOUS)
