@@ -9,5 +9,5 @@ make -j4 all hello test_eigen_numpy_mod
 sudo make install
 
 cd ..
-python$BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION hello
-python$BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION test_eigen_numpy
+python$BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION hello.py
+python$BOOST_PYTHON_NUMPY_EIGEN_PYTHON_VERSION test_eigen_numpy.py
