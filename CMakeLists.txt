@@ -57,6 +57,7 @@ include_directories(
   ${BoostNumpy_INCLUDE_DIR}
 )
 
+# main library
 add_library(boost_numpy_eigen SHARED
   src/eigen_numpy.cc
   src/python.cc
@@ -70,7 +71,15 @@ set_target_properties(boost_numpy_eigen PROPERTIES
   PREFIX ""
   SUFFIX ".so"
 )
-
 install(TARGETS boost_numpy_eigen
   LIBRARY DESTINATION "${PYTHON_SITE_PACKAGES}"
 )
+
+# unit test
+add_library(test_eigen_numpy_mod SHARED EXCLUDE_FROM_ALL src/test_eigen_numpy_mod.cc)
+target_link_libraries(test_eigen_numpy_mod boost_numpy_eigen)
+set_target_properties(test_eigen_numpy_mod PROPERTIES PREFIX "")
+
+# example
+add_library(hello SHARED EXCLUDE_FROM_ALL src/hello.cc src/hello_mod.cc)
+target_link_libraries(hello boost_numpy_eigen)
